@@ -48,4 +48,4 @@ jobs:
           name: id_rsa # 省略可
           known_hosts: ${{ secrets.KNOWN_HOSTS }} # 必須
       - name: run deploy script
-        run: ls -al ~/
+        run: find ~/
