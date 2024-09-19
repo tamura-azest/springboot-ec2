@@ -39,6 +39,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     needs: build
+    environment: production
     steps:
       - name: Install SSH key
         uses: shimataro/ssh-key-action@v2
