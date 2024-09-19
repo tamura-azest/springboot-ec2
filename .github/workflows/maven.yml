@@ -41,6 +41,10 @@ jobs:
     needs: build
     environment: production
     steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: appjar
+          path: ~/app.jar
       - name: Install SSH key
         uses: shimataro/ssh-key-action@v2
         with: # shimataro/ssh-key-actionに渡すパラメーター
@@ -48,4 +52,4 @@ jobs:
           name: id_rsa # 省略可
           known_hosts: ${{ secrets.KNOWN_HOSTS }} # 必須
       - name: run deploy script
-        run: find ~/
+        run: ls -al ~/
