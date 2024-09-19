@@ -44,7 +44,7 @@ jobs:
       - uses: actions/download-artifact@v4
         with:
           name: appjar
-          path: ~/app.jar
+          path: ~/
       - name: Install SSH key
         uses: shimataro/ssh-key-action@v2
         with: # shimataro/ssh-key-actionに渡すパラメーター
@@ -54,4 +54,4 @@ jobs:
       - name: run deploy script
         run: |
           ls -al ~/
-          scp ~/app.jar ec2-user@52.199.247.188:~/
+          #scp ~/app.jar ec2-user@52.199.247.188:~/
