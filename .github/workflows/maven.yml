@@ -54,4 +54,4 @@ jobs:
       - name: run deploy script
         run: |
           scp ~/SpringbootLoginQiita-0.0.1-SNAPSHOT.jar ec2-user@52.199.247.188:~/app.jar
-          sudo systemctl restart springboot.service
+          ssh ec2-user@52.199.247.188 "sudo systemctl restart springboot.service"
